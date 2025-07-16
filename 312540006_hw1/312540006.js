@@ -1,4 +1,4 @@
-d3.csv("http://vis.lab.djosix.com:2024/data/iris.csv", function (data) {
+d3.csv("iris.csv", function (data) {
     data = data.slice(0, -1);
 
     var margin = { top: 20, right: 20, bottom: 90, left: 50 },
