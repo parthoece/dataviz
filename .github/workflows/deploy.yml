@@ -13,7 +13,13 @@ jobs:
       - name:  Checkout repository
         uses: actions/checkout@v3
 
-      - name: 🪄 Rename *.html files to index.html in homework folders
+      - name:  Convert all CSV files to JS (for GitHub Pages)
+        run: |
+          pip install pandas
+          python3 scripts/convert_all_hw_csv_to_js.py
+
+
+      - name:  Rename *.html files to index.html in homework folders
         run: |
           for folder in 312540006_hw*; do
             html_file=$(find "$folder" -name "*.html" | head -n 1)
@@ -22,6 +28,8 @@ jobs:
               echo " Copied $html_file → $folder/index.html"
             fi
           done
+          
+      
 
       - name:  Generate Landing Page at root
         run: |
