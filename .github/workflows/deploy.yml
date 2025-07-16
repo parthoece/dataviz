@@ -26,7 +26,7 @@ jobs:
               echo "<li><a href=\"../$clean/\">$clean</a></li>"
             done
             echo "</ul></body></html>"
-          } > docs/index.html
+          } > index.html
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v3
