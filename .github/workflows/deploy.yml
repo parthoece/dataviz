@@ -13,25 +13,24 @@ jobs:
       - name:  Checkout repository
         uses: actions/checkout@v3
 
-      - name:  Rename all *.html dashboards to index.html (if needed)
+      - name: 🪄 Rename *.html files to index.html in homework folders
         run: |
           for folder in 312540006_hw*; do
-            src_file=$(find "$folder" -name "*.html" | head -n 1)
-            if [ -f "$src_file" ]; then
-              cp "$src_file" "$folder/index.html"
-              echo " Copied $src_file → $folder/index.html"
+            html_file=$(find "$folder" -name "*.html" | head -n 1)
+            if [ -f "$html_file" ]; then
+              cp "$html_file" "$folder/index.html"
+              echo " Copied $html_file → $folder/index.html"
             fi
           done
 
-      - name:  Generate Dashboard Landing Page
+      - name:  Generate Landing Page at root
         run: |
-          mkdir -p docs
           {
             echo "<!DOCTYPE html><html><head><title>Dashboard Index</title></head><body>"
             echo "<h1>Dashboard Index</h1><ul>"
             for folder in 312540006_hw* data_viz_project*; do
-              if [ -f "$folder/index.html" ]; then
-                echo "<li><a href=\"../$folder/\">$folder</a></li>"
+              if [ -f \"$folder/index.html\" ]; then
+                echo "<li><a href=\"$folder/\">$folder</a></li>"
               fi
             done
             echo "</ul></body></html>"
@@ -40,7 +39,7 @@ jobs:
       - name:  Setup GitHub Pages
         uses: actions/configure-pages@v3
 
-      - name:  Upload site content
+      - name:  Upload full repository content
         uses: actions/upload-pages-artifact@v2
         with:
           path: .
