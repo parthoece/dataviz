@@ -1,0 +1,40 @@
+name: Auto Deploy Dashboards
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Generate Dashboard Landing Page
+        run: |
+          DASHBOARDS=$(ls -d */ | grep -E '^312540006_hw[0-9]+/|^data_viz_project.*/' | sort)
+          mkdir -p docs
+          {
+            echo "<!DOCTYPE html>"
+            echo "<html><head><title>Dashboard Index</title></head><body>"
+            echo "<h1>Dashboard Index</h1><ul>"
+            for folder in $DASHBOARDS; do
+              clean=${folder%/}
+              echo "<li><a href=\"../$clean/\">$clean</a></li>"
+            done
+            echo "</ul></body></html>"
+          } > docs/index.html
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload site content
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
