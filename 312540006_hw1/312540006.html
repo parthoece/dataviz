@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW 1 - Enhanced Scatter Plot</title>
+    <link rel="stylesheet" href="312540006.css">
+</head>
+
+<body>
+    <h1>HW1 - Scatter Plots</h1>
+    <div id="my_dataviz"></div>
+
+    <fieldset>
+        <legend>X axis</legend>
+        <div>
+            <input type="radio" id="X_sepal_length" name="X_axis" value="sepal length" checked />
+            <label for="X_sepal_length">Sepal Length</label>
+        </div>
+        <div>
+            <input type="radio" id="X_sepal_width" name="X_axis" value="sepal width" />
+            <label for="X_sepal_width">Sepal Width</label>
+        </div>
+        <div>
+            <input type="radio" id="X_petal_length" name="X_axis" value="petal length" />
+            <label for="X_petal_length">Petal Length</label>
+        </div>
+        <div>
+            <input type="radio" id="X_petal_width" name="X_axis" value="petal width" />
+            <label for="X_petal_width">Petal Width</label>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Y axis</legend>
+        <div>
+            <input type="radio" id="Y_sepal_length" name="Y_axis" value="sepal length" />
+            <label for="Y_sepal_length">Sepal Length</label>
+        </div>
+        <div>
+            <input type="radio" id="Y_sepal_width" name="Y_axis" value="sepal width" checked />
+            <label for="Y_sepal_width">Sepal Width</label>
+        </div>
+        <div>
+            <input type="radio" id="Y_petal_length" name="Y_axis" value="petal length" />
+            <label for="Y_petal_length">Petal Length</label>
+        </div>
+        <div>
+            <input type="radio" id="Y_petal_width" name="Y_axis" value="petal width" />
+            <label for="Y_petal_width">Petal Width</label>
+        </div>
+    </fieldset>
+
+    <hr>
+    <div class="footer">
+        <p>Author: Partho Adhikari</p>
+        <p>Student ID: 312540006</p>
+        <p>Date: 2024/09/14</p>
+    </div>
+
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="312540006.js"></script>
+</body>
+
+</html>

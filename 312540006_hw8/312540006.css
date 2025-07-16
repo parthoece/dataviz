@@ -1,0 +1,41 @@
+/* Styling for the title of the Sankey diagram */
+#title {
+    font-size: 2.5em; /* Increased font size for better visibility */
+    font-weight: bold; /* Makes the title bold */
+    color: #333; /* Sets a darker shade for better contrast */
+    text-align: center; /* Centers the title on the page */
+    margin-bottom: 20px; /* Adds space below the title */
+}
+
+/* Styling for node rectangles */
+.node rect {
+    cursor: grab; /* Changes the cursor to a hand icon to indicate draggable functionality */
+    fill-opacity: 0.85; /* Adjusts the transparency level for better visibility */
+    stroke-width: 1.5px; /* Adds a thin border around the node */
+    stroke: #555; /* Sets a subtle border color */
+    shape-rendering: crispEdges; /* Keeps the edges of node rectangles sharp */
+    transition: fill-opacity 0.2s; /* Adds a smooth transition when opacity changes */
+}
+
+/* Styling for text within the nodes */
+.node text {
+    pointer-events: none; /* Disables mouse interactions on text */
+    font-size: 12px; /* Sets a smaller font size for better fit */
+    fill: #333; /* Makes the text color dark gray for readability */
+    text-shadow: 1px 1px 2px #fff; /* Adds a subtle shadow for contrast */
+}
+
+/* Styling for the links (paths connecting nodes) */
+.link {
+    fill: none; /* Ensures that the link paths are not filled */
+    stroke: #999; /* Sets a neutral color for the stroke */
+    stroke-width: 2px; /* Increases the width for better visibility */
+    stroke-opacity: 0.3; /* Adjusts the transparency for a softer appearance */
+    transition: stroke-opacity 0.2s; /* Smooth transition for opacity changes */
+}
+
+/* Styling for links when hovered */
+.link:hover {
+    stroke-opacity: 0.6; /* Darkens the link opacity when hovered to highlight it */
+    stroke: #666; /* Changes the stroke color on hover for better feedback */
+}

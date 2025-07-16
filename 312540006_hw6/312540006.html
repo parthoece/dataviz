@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW6_ThemeRiver</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="312540006.css">
+</head>
+
+<body class="container text-center">
+    <h1 class="my-3">HW-6: Theme River</h1>
+    <div class="text-muted small"></div>
+        <p>Partho Adhikari - 312540006 </p>
+        <p>15 Oct 2024</p>
+    </div>
+    <hr>
+    <h2><a target="_blank">House Property Sales Time Series</a></h2>
+
+    <div class="row my-3">
+        <!-- Create a div where the graph will take place -->
+        <div id="dataviz" class="col-12 col-md-6">
+            <p class="text-muted small">Hover over the streams on left to see house/unit details for each category over time. The river plot shows the fluctuation of house sales and unit sales with different bedroom categories over time based on median average. The area thickness represents the relative volume of sales.</p>
+        </div>
+    
+        <div class="m-auto col-12 col-md-6">
+            <p>Drag the bedrooms to reorder keys.</p>
+            <div id="blocks" class="list-group col draggable"></div>
+        </div>
+    </div>
+    
+</body>
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v6.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.0/moment.min.js"></script>
+<!-- jsDelivr :: Sortable :: Latest (https://www.jsdelivr.com/package/npm/sortablejs) -->
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+<script src="312540006.js"></script>
+
+</html>

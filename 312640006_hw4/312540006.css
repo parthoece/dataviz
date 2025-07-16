@@ -1,0 +1,84 @@
+/* Ensure the entire page content is centered horizontally */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;  /* Centers content horizontally */
+    font-family: Arial, sans-serif;
+}
+
+/* Container to hold all the content */
+.container {
+    max-width: 1000px;  /* Adjust this size based on your needs */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;  /* Ensure text is centered */
+}
+
+/* Styling for the author information */
+.text-muted {
+    color: gray;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+/* Style for the D3 visualization */
+#my_dataviz {
+    margin: 20px auto;
+    display: block;
+}
+
+/* Add a margin to ensure the heading stays visible */
+h1 {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+
+
+
+
+
+svg {
+    font: 12px sans-serif;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.axis,
+.frame {
+    shape-rendering: crispEdges;
+}
+
+.axis line {
+    stroke: #ddd;
+}
+
+.axis path {
+    display: none;
+}
+
+.cell text {
+    font-weight: bold;
+    text-transform: capitalize;
+    fill: black;
+}
+
+.frame {
+    fill: none;
+    stroke: #aaa;
+}
+
+circle {
+    fill-opacity: .5;
+}
+
+circle.hidden {
+    fill: #ccc !important;
+}
+
+.extent {
+    fill: #000;
+    fill-opacity: .125;
+    stroke: #fff;
+}
